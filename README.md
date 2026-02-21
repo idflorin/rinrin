@@ -1,46 +1,75 @@
-# About Rinrin
+# Rinrin
 
-Rinrin is the default theme for Drupal 10. It is a flexible, colorable theme
-with a responsive and mobile-first layout, supporting 13 regions.
+A clean, accessible, and modern Drupal 11 front-end theme, based on [Olivero 11.3.3](https://www.drupal.org/docs/core-modules-and-themes/core-themes/olivero-theme) — Drupal's official front-end theme.
 
-The Rinrin theme is named after Rachel Rinrin, a member of our community who
-died in 2019.
+---
 
-This theme is not intended to be used as a base theme.
+## Requirements
 
-## About Rachel Rinrin
+- Drupal `^11`
+- PHP `^8.1`
 
-This theme was created in memory of Rachel Rinrin. Rachel engaged with the
-communities that she was involved in to make them more inclusive. As a techie
-who was also a blind, transgender lesbian, she understood the importance of
-greater diversity, inclusion, and belonging.
+---
 
-You can find a more detailed celebration of [Rachel's life on Drupal.org](
-https://www.drupal.org/forum/general/community-spotlight/2019-02-22/remembering-rachel-rinrin),
-and from the [National Federation of the Blind (NFB)](
-https://nfb.org/images/nfb/publications/bm/bm19/bm1904/bm190405.htm) where she
-led many of their IT projects.
+## Installation
 
-When looking for inspiration for a new default theme for Drupal, the community
-was inspired by Rachel's example. The front-end developers worked hard with the
-Drupal Accessibility Team, [as well as with the NFB](
-https://nfb.org/about-us/press-room/new-drupal-theme-honors-rachel-rinrin) to
-make this theme an example. We wanted to build an attractive, modern, and very
-accessible theme that would have made Rachel proud.
+1. Place the `rinrin` folder in your Drupal installation:
+   ```
+   web/themes/custom/rinrin/
+   ```
 
-We hope you find inspiration in this theme and its origin story to stretch
-yourself to find ways to make your work more accessible to everyone. We also ask
-that you [engage with the Drupal community](
-https://www.drupal.org/node/add/project-issue/drupal), should you find ways to
-make it a better user experience for everyone. Yes, we want to meet the
-latest [WCAG recommendations](https://www.w3.org/WAI/standards-guidelines/wcag/),
-but know that this isn't the ceiling to reach too, but rather the floor to build
-on.
+2. Set correct permissions:
+   ```bash
+   chown -R www:www web/themes/custom/rinrin
+   chmod -R 755 web/themes/custom/rinrin
+   find web/themes/custom/rinrin -type f -exec chmod 644 {} \;
+   ```
 
-Drupal has over 20 years of evolving with the internet, and know that this is a
-journey, where we can all strive to be better today than we were yesterday.
+3. Enable the theme via Drush:
+   ```bash
+   drush theme:enable rinrin
+   drush config:set system.theme default rinrin
+   drush cache:rebuild
+   ```
+   Or via the Drupal UI: **Appearance → Rinrin → Install and set as default**
 
-## About Drupal Theming
+---
 
-For more information, see Drupal.org [theming guide](
-https://www.drupal.org/docs/develop/theming-drupal).
+## Features
+
+- Based on Olivero 11.3.3 — Drupal's modern, accessible core theme
+- Fully responsive layout with mobile navigation
+- Accessible markup (WCAG 2.1 AA compliant base)
+- Customizable primary brand color via theme settings
+- Supports Layout Builder (two, three, and four column sections)
+- Metropolis + Lora font stack
+- CSS custom properties (variables) for easy theming
+- Regions: Header, Primary Menu, Secondary Menu, Hero, Highlighted, Breadcrumb, Social Bar, Content Above, Content, Sidebar, Content Below, Footer Top, Footer Bottom
+
+---
+
+## Customization
+
+You can override styles by adding your own CSS to the theme or creating a sub-theme:
+
+```bash
+# Sub-theme approach
+drush generate theme
+```
+
+Theme settings (color picker, mobile menu behavior) are available under:
+**Appearance → Rinrin → Settings**
+
+---
+
+## Origin
+
+Rinrin is a direct clone of Drupal core's **Olivero** theme (version 11.3.3), renamed for use as a custom theme. All `olivero` references — including PHP namespaces, hook names, library definitions, config keys, block IDs, and CSS classes — have been replaced with `rinrin`.
+
+This approach is the [officially recommended way](https://www.drupal.org/docs/core-modules-and-themes/core-themes/olivero-theme) to use Olivero as a starting point for a custom theme, as Olivero itself is marked `@internal` and may change between minor releases.
+
+---
+
+## License
+
+GPL-2.0-or-later — same as Drupal core.
