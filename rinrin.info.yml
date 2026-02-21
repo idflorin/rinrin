@@ -1,0 +1,88 @@
+# This theme is marked as @internal. It is intended to evolve and change over
+# minor releases.
+# As the UI of Drupal improves between minor versions, the markup and assets in
+# the Rinrin theme will change. The Rinrin theme is not backwards compatible
+# If you wish to modify the output or assets of Rinrin you can:
+# 1. Copy the whole of Rinrin and rename it as your own theme. You will need to
+# manually manage your own updates if you want to stay up to date with Rinrin's
+# bug fixes and feature support.
+#
+# 2. Sub-theme Rinrin. This is only recommended if you want to make minor
+# tweaks and understand that Rinrin could break your modifications as it
+# changes.
+name: Rinrin
+type: theme
+base theme: false
+description: A clean, accessible, and modern Drupal 11 front-end theme — cloned and customized from Olivero 11.3.3.
+alt text: Screenshot of Rinrin, Drupal front-end theme.
+package: Custom
+core_version_requirement: ^11
+version: 11.3.3
+libraries:
+  - rinrin/global-styling
+regions:
+  header: Header
+  primary_menu: Primary menu
+  secondary_menu: Secondary menu
+  hero: Hero (full width)
+  highlighted: Highlighted
+  breadcrumb: Breadcrumb
+  social: Social Bar
+  content_above: Content Above
+  content: Content
+  sidebar: Sidebar
+  content_below: Content Below
+  footer_top: Footer Top
+  footer_bottom: Footer Bottom
+libraries-override:
+  core/drupal.ajax:
+    css:
+      component:
+        core/components/ajax-progress.module.css: css/components/ajax-progress.module.css
+  core/drupal.autocomplete:
+    css:
+      component:
+        core/components/autocomplete-loading.module.css: css/components/autocomplete-loading.module.css
+  system/admin:
+    css:
+      theme:
+        css/system.admin.css: false
+  core/drupal.checkbox: false
+  core/drupal.dropbutton:
+    css:
+      component:
+        misc/dropbutton/dropbutton.css: css/components/dropbutton.css
+  core/drupal.vertical-tabs:
+    css:
+      component:
+        misc/vertical-tabs.css: css/components/vertical-tabs.css
+  media/oembed.formatter: false
+  layout_builder/twocol_section: rinrin/layout_builder_twocol_section
+  layout_builder/threecol_section: rinrin/layout_builder_threecol_section
+  layout_builder/fourcol_section: rinrin/layout_builder_fourcol_section
+libraries-extend:
+  core/drupal.message:
+    - rinrin/drupal.message
+  core/drupal.collapse:
+    - rinrin/details
+  core/drupal.dialog:
+    - rinrin/drupal.dialog
+  core/drupal.progress:
+    - rinrin/progress
+  core/drupal.tabledrag:
+    - rinrin/tabledrag
+  layout_discovery/onecol:
+    - rinrin/layout_discovery_section
+  layout_discovery/twocol_bricks:
+    - rinrin/layout_discovery_section
+  layout_discovery/twocol:
+    - rinrin/layout_discovery_section
+  layout_discovery/threecol_25_50_25:
+    - rinrin/layout_discovery_section
+  layout_discovery/threecol_33_34_33:
+    - rinrin/layout_discovery_section
+  node/drupal.node.preview:
+    - rinrin/drupal.node.preview
+  content_moderation/content_moderation:
+    - rinrin/content_moderation
+

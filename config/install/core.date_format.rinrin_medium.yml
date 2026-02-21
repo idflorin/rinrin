@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    theme:
+      - rinrin
+id: rinrin_medium
+label: 'Rinrin Medium'
+locked: false
+pattern: 'j  F,  Y'
