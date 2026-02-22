@@ -65,22 +65,6 @@ img{
   }
 }
 
-.breadcrumb__content {
-  overflow: hidden;
-}
-
-.breadcrumb ol {
-  flex-wrap: nowrap;
-  overflow: hidden;
-}
-
-.breadcrumb__item:last-child {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  min-width: 0;
-}
-
 .node--view-mode-full .node__content .field--tags {
   margin-block-start: var(--sp0-5);
   margin-block-end: var(--sp0-5);padding-block: var(--sp0-5);
