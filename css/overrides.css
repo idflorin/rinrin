@@ -65,15 +65,20 @@ img{
   }
 }
 
+.region--breadcrumb {
+  overflow: hidden;
+}
+
 .breadcrumb ol {
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 .breadcrumb__item:last-child {
-  white-space: normal;
-  overflow: visible;
-  text-overflow: unset;
-  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
 }
 
 .node--view-mode-full .node__content .field--tags {
