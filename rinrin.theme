@@ -44,6 +44,23 @@ function rinrin_preprocess_html(&$variables) {
       'href' => $variables['rinrin_path'] . '/css/components/navigation/nav-primary-no-js.css?' . $query_string,
     ],
   ];
+  try {
+    // Uses the path.matcher service to determine if the current page is the front page.
+    $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+  }
+  catch (\Exception $e) {
+    // Stores the result (TRUE or FALSE) in $variables['is_front'] for Twig.
+    $variables['is_front'] = FALSE;
+  }
+  // Adds cache context so the front-page flag works with render caching.
+  $variables['#cache']['contexts'][] = 'url.path.is_front';
+
+  // Determine whether to show ads on this page. Prefer computing in PHP
+  // rather than calling object methods from Twig templates.
+  $current_user = \Drupal::currentUser();
+  $variables['show_ads'] = !in_array('administrator', $current_user->getRoles());
+  // Vary cache by user roles because ads visibility depends on role membership.
+  $variables['#cache']['contexts'][] = 'user.roles';
 }
 
 /**
@@ -367,6 +384,17 @@ function rinrin_preprocess_field(&$variables) {
 
   if ($variables['field_type'] == 'image' && $variables['element']['#view_mode'] == 'full' && !$variables["element"]["#is_multiple"] && $variables['field_name'] !== 'user_picture') {
     $variables['attributes']['class'][] = 'wide-content';
+  }
+
+  // add title atribute to field_tags and field_category reference fields
+  if (($variables['element']['#field_type'] == 'entity_reference') && ($variables['element']['#bundle'] == 'article' || $variables['element']['#bundle'] == 'story' || $variables['element']['#bundle'] == 'post') ) {
+    if (is_array($variables['items'])) {
+      foreach ($variables['items'] as &$item) {
+        if (isset($item['content']['#title'])) {
+         $item['content']['#options']['attributes']['title'] = $item['content']['#title'];
+        }
+      }
+    }
   }
 }
 
