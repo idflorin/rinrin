@@ -18,7 +18,7 @@
     line-height: var(--sp3);
   }
 }
-}
+
 @media (min-width: 62.5rem) {
 
   .sidebar-grid > .site-main {
