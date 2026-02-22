@@ -21,6 +21,10 @@
     font-size: var(--sp2);
     line-height: var(--sp3);
   }
+  h1, h2, h3, h4, h5, h6 {
+    margin-block-start: var(--sp1);
+    margin-block-end: var(--sp2);
+  }
 }
 
 @media (min-width: 62.5rem) {
