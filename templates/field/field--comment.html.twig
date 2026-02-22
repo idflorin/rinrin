@@ -33,12 +33,12 @@
 
   {% if not label_hidden %}
     {{ title_prefix }}
-    <h2{{ title_attributes.addClass('comments__title') }}>
+    <h4{{ title_attributes.addClass('comments__title') }}>
       {{- label -}}
       {%- if comments -%}
         <span class="comments__count">{{ comment_count }}</span>
       {%- endif -%}
-    </h2>
+    </h4>
     {{ title_suffix }}
   {% endif %}
 
