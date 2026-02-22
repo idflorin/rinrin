@@ -34,7 +34,7 @@ img{
   &::after {
     position: absolute;
     inset-block-end: 0;
-    width: var(--sp3);
+    width: var(--sp6);
     height: 0;
     content: "";
     /* Intentionally not using CSS logical properties. */
