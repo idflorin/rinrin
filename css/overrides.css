@@ -148,14 +148,14 @@ img{
 .teaser__content {
   display: grid;
   grid-auto-rows: max-content;
-  gap: var(--sp);
+  gap: var(--sp0-5);
 
   .field:not(:last-child) {
     margin-block-end: 0;
   }
 
   @media (min-width: 62.5rem) {
-    gap: var(--sp2);
+    gap: var(--sp0-5);
   }
 }
 .teaser__image {
