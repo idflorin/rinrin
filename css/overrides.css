@@ -94,7 +94,7 @@ img{
   }
 }
 .teaser__meta {
-  margin-block-end: var(--sp);
+  margin-block-end: var(--sp0-25);
 }
 .teaser__title {
   margin-block: 0;
