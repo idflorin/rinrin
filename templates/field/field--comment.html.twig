@@ -29,6 +29,7 @@
 #}
 
 {{ attach_library('rinrin/comments') }}
+{% if comments %}
 <section{{ attributes.setAttribute('data-drupal-selector', 'comments').addClass('comments') }}>
 
   {% if not label_hidden %}
@@ -60,3 +61,4 @@
   {{ comments }}
 
 </section>
+{% endif %}

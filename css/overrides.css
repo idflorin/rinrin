@@ -6,6 +6,10 @@
  * Use this file to override any default Rinrin/Olivero CSS.
  */
 
+.node--view-mode-full .node__content ul.links.inline li:first-child a {
+    font-weight: 700;
+}
+
 /* =====================================================
    Sidebar grid — content column positioning
    ===================================================== */
