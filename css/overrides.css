@@ -29,7 +29,10 @@
   .sidebar-grid > .site-main .layout--pass--content-narrow > * {
     grid-column: 1 / 11;
   }
-
+  .layout--content-medium, .layout--pass--content-medium > * {
+    grid-column: 1 / 15;
+  }
+/* Sticky sidebar */
   .sidebar-grid .region--sidebar {
     position: sticky;
     top: 2rem;
