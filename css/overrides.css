@@ -5,6 +5,15 @@
  * Overrides for Rinrin theme core styles.
  * Use this file to override any default Rinrin/Olivero CSS.
  */
+img{
+  border-radius: 5px;
+}
+.node img{
+  margin: var(--sp0-5) 0;
+}
+.field:not(:last-child) {
+    margin-block-end: var(--sp0-5);
+}
 
 .teaser {
   position: relative;
@@ -63,10 +72,6 @@
 }
 .node--view-mode-full .node__content ul.links.inline li:first-child a {
     font-weight: 700;
-}
-
-.field:not(:last-child) {
-    margin-block-end: var(--sp1);
 }
 
 /* =====================================================
