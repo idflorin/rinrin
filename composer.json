@@ -1,0 +1,29 @@
+{
+    "name": "idflorin/rinrin",
+    "description": "A clean, accessible, and modern Drupal 11 front-end theme, cloned from Olivero 11.3.3.",
+    "type": "drupal-custom-theme",
+    "license": "GPL-2.0-or-later",
+    "version": "11.3.4",
+    "keywords": [
+        "drupal",
+        "theme",
+        "drupal-theme",
+        "olivero",
+        "drupal11"
+    ],
+    "homepage": "https://github.com/idflorin/rinrin",
+    "authors": [
+        {
+            "name": "idflorin",
+            "homepage": "https://github.com/idflorin"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "drupal/core": "^11"
+    },
+    "support": {
+        "source": "https://github.com/idflorin/rinrin",
+        "issues": "https://github.com/idflorin/rinrin/issues"
+    }
+}
