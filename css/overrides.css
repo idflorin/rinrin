@@ -9,7 +9,16 @@
 /* =====================================================
    Sidebar grid — content column positioning
    ===================================================== */
-
+@media (min-width: 43.75rem) {
+  .main-content__container {
+    padding-block-start: var(--sp1);
+  }
+  h1.page-title {
+    font-size: var(--sp2);
+    line-height: var(--sp3);
+  }
+}
+}
 @media (min-width: 62.5rem) {
 
   .sidebar-grid > .site-main {
@@ -31,6 +40,9 @@
   }
   .layout--content-medium, .layout--pass--content-medium > * {
     grid-column: 1 / 15;
+  }
+  .region > *:where(:not([data-big-pipe-placeholder-id])) {
+    margin-block-end: var(--sp1);
   }
 /* Sticky sidebar */
   .sidebar-grid .region--sidebar {
