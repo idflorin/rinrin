@@ -713,3 +713,20 @@ function _rinrin_hex_to_hsl(string $hex_string) {
 
   return [$h, $s, $l];
 }
+
+
+function rinrin_preprocess_breadcrumb(&$variables){
+// add current node title to breadcrumb
+  if($variables['breadcrumb']){
+    $request = \Drupal::request();
+    $route_match = \Drupal::routeMatch();
+    $page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+    if (!empty($page_title)) {
+      $variables['breadcrumb'][] = array(
+        'text' => $page_title
+      );
+      // Add cache context based on url.
+      $variables['#cache']['contexts'][] = 'url';
+    }
+  }
+}
