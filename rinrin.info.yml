@@ -17,7 +17,7 @@ description: A clean, accessible, and modern Drupal 11 front-end theme — clone
 alt text: Screenshot of Rinrin, Drupal front-end theme.
 package: Custom
 core_version_requirement: ^11
-version: 11.3.3
+version: 11.3.4
 libraries:
   - rinrin/global-styling
 regions:
