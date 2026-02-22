@@ -65,6 +65,17 @@ img{
   }
 }
 
+.breadcrumb ol {
+  flex-wrap: wrap;
+}
+
+.breadcrumb__item:last-child {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  max-width: 100%;
+}
+
 .node--view-mode-full .node__content .field--tags {
   margin-block-start: var(--sp0-5);
   margin-block-end: var(--sp0-5);padding-block: var(--sp0-5);
