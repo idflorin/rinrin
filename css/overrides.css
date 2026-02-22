@@ -1,0 +1,62 @@
+/**
+ * @file
+ * overrides.css
+ *
+ * Overrides for Rinrin theme core styles.
+ * Use this file to override any default Rinrin/Olivero CSS.
+ */
+
+/* =====================================================
+   Sidebar grid — content column positioning
+   ===================================================== */
+
+@media (min-width: 62.5rem) {
+
+  .sidebar-grid > .site-main {
+    grid-column: 2 / 12;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+
+  .sidebar-grid > .site-main > .region--content-above,
+  .sidebar-grid > .site-main > .region--content {
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    grid-column: 1 / 11;
+  }
+
+  .sidebar-grid > .site-main .layout--content-medium,
+  .sidebar-grid > .site-main .layout--pass--content-medium > *,
+  .sidebar-grid > .site-main .layout--content-narrow,
+  .sidebar-grid > .site-main .layout--pass--content-narrow > * {
+    grid-column: 1 / 11;
+  }
+
+  .sidebar-grid .region--sidebar {
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+  }
+
+}
+
+/* =====================================================
+   Fix: views display:grid conflict inside sidebar
+   ===================================================== */
+
+.sidebar-grid .view,
+.sidebar-grid .view-content {
+  display: block;
+}
+
+.sidebar-grid .view-content > * + * {
+  margin-block-start: var(--sp3);
+}
+
+/* =====================================================
+   Footer spacing
+   ===================================================== */
+
+@media (min-width: 75rem) {
+  .site-footer__inner {
+    padding-block: var(--sp1);
+  }
+}

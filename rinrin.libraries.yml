@@ -18,6 +18,9 @@ global-styling:
       css/layout/region-secondary-menu.css: {}
       css/layout/social-bar.css: {}
       css/layout/views.css: {}
+    theme:
+      css/overrides.css: { weight: 100 }
+      css/custom.css: { weight: 110 }
     component:
       css/components/block.css: {}
       css/components/breadcrumb.css: {}
