@@ -74,16 +74,6 @@ img{
     font-weight: 700;
 }
 
-.sidebar-grid .wide-content {
-  @media (min-width: 62.5rem) {
-    width: calc(10 * var(--grid-col-width) + 11 * var(--grid-gap));
-  }
-
-  @media (min-width: 81.25rem) {
-    width: calc(10 * var(--grid-col-width) + 11 * var(--grid-gap));
-  }
-}
-
 /* =====================================================
    Sidebar grid — content column positioning
    ===================================================== */
