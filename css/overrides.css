@@ -6,6 +6,41 @@
  * Use this file to override any default Rinrin/Olivero CSS.
  */
 
+.teaser__image {
+  flex-shrink: 0;
+  margin: 0;
+  &:empty {
+      display: none;
+      & + .teaser__title {
+          flex-basis: auto;
+      }
+  }
+
+  & a {
+      display: block;
+  }
+
+  & img {
+      width: var(--sp3-5);
+      height: var(--sp3-5);
+      object-fit: cover;
+      border-radius: 50%;
+      @media (min-width: 62.5rem) {
+          width:var(--grid-col-width);
+          height:var(--grid-col-width);}
+  }
+
+  @media (min-width: 62.5rem) {
+      position:absolute;
+      inset-block-start:0;inset-inline-start:calc(-1 * ((var(--grid-col-width) + var(--grid-gap))));margin: 0;
+  }
+}
+
+.node--view-mode-full .node__content .field--tags {
+  margin-block-start: var(--sp0-5);
+  margin-block-end: var(--sp0-5);padding-block: var(--sp0-5);
+  padding-inline-start: var(--sp1);padding-inline-end: var(--sp1);
+}
 .node--view-mode-full .node__content ul.links.inline li:first-child a {
     font-weight: 700;
 }
