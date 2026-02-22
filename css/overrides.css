@@ -8,8 +8,9 @@
 
 .teaser {
   position: relative;
-  padding-block-end:var(--sp1-5);&: :after {
-    position:absolute;
+  padding-block-end: var(--sp1-5);
+  &::after {
+    position: absolute;
     inset-block-end: 0;
     width: var(--sp3);
     height: 0;
