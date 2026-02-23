@@ -35,6 +35,8 @@ img{
 }
 .node__meta {
   margin-block-end: var(--sp0-5);
+  justify-content: flex-end;
+  text-align: right;
 }
 
 .node--view-mode-full .node__content .field--tags {
