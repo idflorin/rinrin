@@ -33,7 +33,9 @@ img{
   margin-block-start: var(--sp0-25);
   margin-block-end: var(--sp0-25);
 }
-
+.node__meta {
+  margin-block-end: var(--sp0-5);
+}
 
 .node--view-mode-full .node__content .field--tags {
   margin-block-start: var(--sp0-5);
@@ -44,10 +46,18 @@ img{
     font-weight: 700;
 }
 
+@media (min-width: 31.25rem) {
+  .node__meta {
+    margin-block-end: var(--sp0-5);
+  }
+}
 
 @media (min-width: 62.5rem) {
   .sidebar-grid .wide-content {
     width: calc(10 * var(--grid-col-width) + 11 * var(--grid-gap));
+  }
+  .node__content {
+      padding-block-end: var(--sp1-5);
   }
 }
 
