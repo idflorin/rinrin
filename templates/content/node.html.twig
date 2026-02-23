@@ -86,7 +86,7 @@
   </header>
   <div{{ content_attributes.addClass('node__content', layout) }}>
     {# Comments not part of content, so they won't inherit .text-content styles. #}
-    {{ content|without('comment|links') }}
+    {{ content|without('comment') }}
     {% if display_submitted %}
       <div class="node__meta">
       {% if author_picture %}
