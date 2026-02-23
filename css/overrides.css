@@ -69,7 +69,12 @@ img{
   }
 }
 
-
+.sidebar-grid .region--sidebar {
+    h1, h2, h3, h4, h5, h6 {
+    margin-block-start: var(--sp0-5);
+    margin-block-end: var(--sp0-5);
+  }
+}
 /* =====================================================
    Sidebar grid — content column positioning
    ===================================================== */
