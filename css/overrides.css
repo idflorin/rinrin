@@ -5,7 +5,7 @@
  * Overrides for Rinrin theme core styles.
  * Use this file to override any default Rinrin/Olivero CSS.
  */
-img{
+img, .feed-icon__icon, .pager__item--active, .node__author-image img, .button{
   border-radius: 7px;
 }
 .node .field--type-image .field__item img{
@@ -44,6 +44,7 @@ img{
   margin-block-start: var(--sp0-5);
   margin-block-end: var(--sp0-5);padding-block: var(--sp0-5);
   padding-inline-start: var(--sp1);padding-inline-end: var(--sp1);
+  border-radius: 7px;
 }
 .node--view-mode-full .node__content ul.links.inline li:first-child a {
     font-weight: 700;
