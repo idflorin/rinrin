@@ -11,6 +11,7 @@ img{
 .node .field--type-image .field__item img{
   margin: var(--sp0-5) 0;
 }
+
 .field:not(:last-child) {
     margin-block-end: var(--sp0-5);
 }
@@ -85,10 +86,6 @@ img{
   h1.page-title {
     font-size: var(--sp2);
     line-height: var(--sp3);
-  }
-  h1, h2, h3, h4, h5, h6 {
-    margin-block-start: var(--sp1);
-    margin-block-end: var(--sp2);
   }
 }
 
