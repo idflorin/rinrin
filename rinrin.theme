@@ -54,13 +54,6 @@ function rinrin_preprocess_html(&$variables) {
   }
   // Adds cache context so the front-page flag works with render caching.
   $variables['#cache']['contexts'][] = 'url.path.is_front';
-
-  // Determine whether to show ads on this page. Prefer computing in PHP
-  // rather than calling object methods from Twig templates.
-  $current_user = \Drupal::currentUser();
-  $variables['show_ads'] = !in_array('administrator', $current_user->getRoles());
-  // Vary cache by user roles because ads visibility depends on role membership.
-  $variables['#cache']['contexts'][] = 'user.roles';
 }
 
 /**
