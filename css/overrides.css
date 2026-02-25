@@ -5,7 +5,7 @@
  * Overrides for Rinrin theme core styles.
  * Use this file to override any default Rinrin/Olivero CSS.
  */
-img, .feed-icon__icon, .pager__item--active, .node__author-image img, .button{
+img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .node__author-image img, .button{
   border-radius: 7px;
 }
 .node .field--type-image .field__item img{
