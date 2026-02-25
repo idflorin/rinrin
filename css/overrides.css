@@ -161,6 +161,7 @@ img{
 .teaser {
   position: relative; /* Anchor after pseudo-element. */
   padding-block-end: var(--sp0-25);
+  margin-block-end: var(--sp0-25);
 
   &::after {
     position: absolute;
@@ -174,6 +175,7 @@ img{
 
   @media (min-width: 62.5rem) {
     padding-block-end: var(--sp0-25);
+    margin-block-end: var(--sp0-25);
   }
 }
 .teaser__content {
