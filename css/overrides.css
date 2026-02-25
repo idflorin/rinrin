@@ -5,13 +5,11 @@
  * Overrides for Rinrin theme core styles.
  * Use this file to override any default Rinrin/Olivero CSS.
  */
-:root {
-  --ck-border-radius: 7px;
-}
+
 img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:focus, .node__author-image img, .button, .fieldset__wrapper, input[type="checkbox"], [type="text"], select{
   border-radius: 7px;
 }
-.form-item--editor-format .form-element--editor-format {
+.form-item--editor-format .form-element--editor-format, .ck-rounded-corners .ck.ck-editor__main>.ck-editor__editable, .ck.ck-editor__main>.ck-editor__editable.ck-rounded-corners {
     border-radius: 7px;
 }
 .node .field--type-image .field__item img{
