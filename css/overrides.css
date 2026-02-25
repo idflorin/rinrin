@@ -6,7 +6,7 @@
  * Use this file to override any default Rinrin/Olivero CSS.
  */
 img{
-  border-radius: 5%;
+  border-radius: 7px;
 }
 .node .field--type-image .field__item img{
   margin: var(--sp0-5) 0;
@@ -209,7 +209,7 @@ img{
     width: var(--sp3-5);
     height: var(--sp3-5);
     object-fit: cover;
-    border-radius: 5%;
+    border-radius: 7px;
 
     @media (min-width: 62.5rem) {
       width: var(--grid-col-width);
