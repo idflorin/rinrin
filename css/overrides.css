@@ -8,7 +8,7 @@
 :root {
   --ck-border-radius: 7px;
 }
-img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:focus, .node__author-image img, .button, .fieldset__wrapper, input[type="checkbox"], [type="text"]{
+img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:focus, .node__author-image img, .button, .fieldset__wrapper, input[type="checkbox"], [type="text"], select{
   border-radius: 7px;
 }
 .form-item--editor-format .form-element--editor-format {
