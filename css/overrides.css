@@ -34,15 +34,6 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
 .site-branding--bg-white .site-branding__text h1, .site-branding--bg-white .site-branding__text h1 a, .site-branding--bg-white .site-branding__text h2, .site-branding--bg-white .site-branding__text h2 a{color: inherit;}
 .site-branding--bg-gray .site-branding__text h1, .site-branding--bg-gray .site-branding__text h1 a, .site-branding--bg-gray .site-branding__text h2, .site-branding--bg-gray .site-branding__text h2 a{color: inherit;}
 
-.node--view-mode-teaser .node__meta {
-  margin-block-start: var(--sp0-25);
-  margin-block-end: var(--sp0-25);
-}
-.node__meta {
-  margin-block-end: var(--sp0-5);
-  justify-content: flex-end;
-  text-align: right;
-}
 
 .node--view-mode-full .node__content .field--tags {
   margin-block-start: var(--sp0-5);
@@ -53,6 +44,61 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
 .node--view-mode-full .node__content ul.links.inline li:first-child a {
     font-weight: 700;
 }
+
+.node__meta {
+  margin-block-end: var(--sp0-5);
+  justify-content: flex-end;
+  text-align: right;
+}
+
+
+/* teaser */
+/* 1. Container: Enable Flex and Wrap */
+.node--view-mode-teaser .teaser__content {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--sp0-75); /* Space between image and body */
+  row-gap: 0;    /* Space between category and content below */
+  align-items: flex-start;
+}
+
+/* 2. Category: Force to its own line (Full Width) */
+.node--view-mode-teaser .teaser__content .field--name-field-category {
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+/* 3. Image Gallery: "Almost a half" aligned left */
+.node--view-mode-teaser .teaser__content .field--type-image {
+  flex: 0 0 33%; /* Adjust this percentage to your preference */
+  max-width: 33%;
+}
+
+/* Ensure the image scales correctly within its half */
+.node--view-mode-teaser .teaser__content .field--type-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 4. Body: "The other half" aligned right */
+.node--view-mode-teaser .teaser__content .field--name-body {
+  flex: 1; /* Takes up all remaining space on the right */
+  min-width: 0; /* Prevents text from pushing flex container width */
+}
+
+/* Responsive adjustment for Mobile (Screenshot 2 style for phones) */
+@media (max-width: 767px) {
+  .node--view-mode-teaser .teaser__content .field--type-image,
+  .node--view-mode-teaser .teaser__content .field--name-body {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+
+
+
 
 @media (min-width: 31.25rem) {
   .node__meta {
