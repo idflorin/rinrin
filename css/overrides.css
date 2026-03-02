@@ -113,7 +113,7 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
   border: solid 2px var(--color--primary-50);
   border-radius: 7px;
 }
-[type="color"], [type="date"], [type="datetime-local"], [type="email"], [type="file"], [type="month"], [type="number"], [type="password"], [type="search"], [type="tel"], [type="text"], [type="time"], [type="url"], [type="week"], textarea {
+[type="color"], [type="date"], [type="datetime-local"], [type="email"], [type="file"], [type="month"], [type="number"], [type="password"], [type="search"], [type="tel"], [type="text"], [type="time"], [type="url"], [type="week"], textarea, input[type="radio"], input[type="checkbox"] {
     border: 1px solid var(--color--primary-50);
 }
 .fieldset__legend {background-color: var(--color--primary-50);}
