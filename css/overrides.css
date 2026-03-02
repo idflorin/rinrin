@@ -103,6 +103,30 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
   }
 }
 
+
+/* pager */ 
+.pager__items {
+  margin-top: var(--sp0-5);
+}
+
+.fieldset {
+  border: solid 2px var(--color--primary-50);
+  border-radius: 7px;
+}
+[type="color"], [type="date"], [type="datetime-local"], [type="email"], [type="file"], [type="month"], [type="number"], [type="password"], [type="search"], [type="tel"], [type="text"], [type="time"], [type="url"], [type="week"], textarea {
+    border: 1px solid var(--color--primary-50);
+}
+.fieldset__legend {background-color: var(--color--primary-50);}
+
+
+/* glightbox */ 
+.glightbox-clean .gslide-description {
+  border-radius: 7px;
+}
+.glightbox-clean .gdesc-inner {
+	padding: 1rem;
+}
+
 @media (min-width: 81.25rem) {
   .sidebar-grid .wide-content {
     width: calc(10 * var(--grid-col-width) + 11 * var(--grid-gap));
