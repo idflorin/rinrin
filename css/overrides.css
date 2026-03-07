@@ -126,7 +126,7 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
 
 .button--primary:disabled, .button--primary.is-disabled {
   color: var(--color--white);
-  background-color: var(--color--primary-30);
+  background-color: var(--color--primary-80);
 }
 
 /* glightbox */ 
