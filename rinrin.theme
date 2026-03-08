@@ -776,3 +776,50 @@ function _rinrin_hex_to_hsl(string $hex_string) {
 
   return [$h, $s, $l];
 }
+
+
+/**
+ * Implements hook_block_access().
+ */
+function rinrin_block_access(\Drupal\block\Entity\Block $block, $operation, \Drupal\Core\Session\AccountInterface $account) {
+  use Drupal\Core\Access\AccessResult;
+  
+  // List of blocks from Article Status view that should only be visible on user's own profile
+  $restricted_blocks = [
+    'views_block__article_status_block_1',  // Published Articles by User
+    'views_block__article_status_block_2',  // Draft Articles by User
+    'views_block__article_status_block_3',  // Submitted for Review by User
+    'views_block__article_status_block_4',  // Needing Revision by User
+  ];
+  
+  if ($operation == 'view' && in_array($block->id(), $restricted_blocks)) {
+    // Allow admins and editors to see all blocks on all profiles
+    if ($account->hasPermission('administer blocks') || 
+        $account->hasPermission('administer nodes') ||
+        $account->hasPermission('use editorial transition publish') ||
+        $account->hasPermission('use editorial transition review')) {
+      return AccessResult::allowed()->addCacheContexts(['user.permissions']);
+    }
+    
+    // For regular users, check if viewing their own profile
+    $route_match = \Drupal::routeMatch();
+    $viewed_user = $route_match->getParameter('user');
+    
+    if ($viewed_user) {
+      $viewed_uid = is_object($viewed_user) ? $viewed_user->id() : $viewed_user;
+      $current_uid = $account->id();
+      
+      // Allow if viewing own profile
+      if ($viewed_uid == $current_uid) {
+        return AccessResult::allowed()->addCacheContexts(['user', 'url.path']);
+      }
+      else {
+        // Forbid if viewing someone else's profile
+        return AccessResult::forbidden()->addCacheContexts(['user', 'url.path']);
+      }
+    }
+  }
+  
+  // Return neutral for all other blocks
+  return AccessResult::neutral();
+}
