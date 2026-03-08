@@ -123,6 +123,17 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
     flex: 1; /* Takes up all remaining space on the right */
     min-width: 0; /* Prevents text from pushing flex container width */
   }
+
+  /* related Image : "Almost a half" aligned left */
+  .node--view-mode-related .teaser__content .field--type-image {
+    flex: 0 0 33%; /* Adjust this percentage to your preference */
+    max-width: 33%;
+  }
+  /* related Body: "The other half" aligned right */
+  .node--view-mode-related .teaser__content .field--name-body {
+    flex: 1; /* Takes up all remaining space on the right */
+    min-width: 0; /* Prevents text from pushing flex container width */
+  }
 }
 
 
