@@ -178,6 +178,13 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
   font-weight: 600;
 }
 
+.view-more-by-this-author h3 {
+  margin-block: var(--sp0-25);font-size: 1rem;line-height: var(--sp1);
+}
+
+
+
+
 @media (min-width: 81.25rem) {
   .sidebar-grid .wide-content {
     width: calc(10 * var(--grid-col-width) + 11 * var(--grid-gap));
