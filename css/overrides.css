@@ -126,8 +126,8 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
 
   /* related Image : "Almost a half" aligned left */
   .node--view-mode-related .teaser__content .field--type-image {
-    flex: 0 0 20%; /* Adjust this percentage to your preference */
-    max-width: 20%;
+    flex: 0 0 28%; /* Adjust this percentage to your preference */
+    max-width: 28%;
   }
   /* related Body: "The other half" aligned right */
   .node--view-mode-related .teaser__content .field--name-body {
