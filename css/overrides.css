@@ -295,15 +295,15 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
       height: var(--grid-col-width);
     }
   }
-.teaser__image img {
-    border-radius: 7px;
-}
   @media (min-width: 62.5rem) {
     position: absolute;
     inset-block-start: 0;
     inset-inline-start: calc(-1 * ((var(--grid-col-width) + var(--grid-gap))));
     margin: 0;
   }
+}
+.teaser__image img {
+  border-radius: 7px;
 }
 .teaser__meta {
   margin-block-end: var(--sp0-25);
