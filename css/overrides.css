@@ -183,8 +183,6 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
 }
 
 
-
-
 @media (min-width: 81.25rem) {
   .sidebar-grid .wide-content {
     width: calc(10 * var(--grid-col-width) + 11 * var(--grid-gap));
