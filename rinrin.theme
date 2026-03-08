@@ -778,12 +778,19 @@ function _rinrin_hex_to_hsl(string $hex_string) {
 }
 
 
+
+
 /**
  * Implements hook_block_view_alter().
  */
 function rinrin_block_view_alter(array &$build, \Drupal\Core\Block\BlockPluginInterface $block) {
   // Get the block configuration entity
   $block_id = $build['#id'] ?? NULL;
+  
+  // DEBUG: Show all block IDs that contain 'article'
+  if ($block_id && strpos($block_id, 'article') !== FALSE) {
+    \Drupal::messenger()->addMessage('Block ID found: ' . $block_id);
+  }
   
   if (!$block_id) {
     return;
@@ -798,18 +805,9 @@ function rinrin_block_view_alter(array &$build, \Drupal\Core\Block\BlockPluginIn
   ];
   
   if (in_array($block_id, $restricted_blocks)) {
+    \Drupal::messenger()->addMessage('MATCHED RESTRICTED BLOCK: ' . $block_id, 'warning');
+    
     $current_user = \Drupal::currentUser();
-    
-    // Allow admins and editors to see all blocks on all profiles
-    if ($current_user->hasPermission('administer blocks') || 
-        $current_user->hasPermission('administer nodes') ||
-        $current_user->hasPermission('use editorial transition publish') ||
-        $current_user->hasPermission('use editorial transition review')) {
-      // Allow access for admins
-      return;
-    }
-    
-    // For regular users, check if viewing their own profile
     $route_match = \Drupal::routeMatch();
     $viewed_user = $route_match->getParameter('user');
     
@@ -817,10 +815,29 @@ function rinrin_block_view_alter(array &$build, \Drupal\Core\Block\BlockPluginIn
       $viewed_uid = is_object($viewed_user) ? $viewed_user->id() : $viewed_user;
       $current_uid = $current_user->id();
       
+      \Drupal::messenger()->addMessage('Current UID: ' . $current_uid . ' | Viewed UID: ' . $viewed_uid, 'warning');
+    }
+    
+    // Allow admins and editors to see all blocks on all profiles
+    if ($current_user->hasPermission('administer blocks') || 
+        $current_user->hasPermission('administer nodes') ||
+        $current_user->hasPermission('use editorial transition publish') ||
+        $current_user->hasPermission('use editorial transition review')) {
+      \Drupal::messenger()->addMessage('User has admin permission - allowing block', 'error');
+      return;
+    }
+    
+    // For regular users, check if viewing their own profile
+    if ($viewed_user) {
+      $viewed_uid = is_object($viewed_user) ? $viewed_user->id() : $viewed_user;
+      $current_uid = $current_user->id();
+      
       // If NOT viewing own profile, hide the block
       if ($viewed_uid != $current_uid) {
-        // Hide the block by making it empty
+        \Drupal::messenger()->addMessage('HIDING BLOCK - Not own profile', 'error');
         $build['#access'] = FALSE;
+      } else {
+        \Drupal::messenger()->addMessage('SHOWING BLOCK - Own profile', 'status');
       }
     }
   }
