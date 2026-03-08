@@ -302,7 +302,7 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
     margin: 0;
   }
 }
-.teaser__image img {
+.teaser__top .teaser__image img {
   border-radius: 7px;
 }
 .teaser__meta {
