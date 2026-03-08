@@ -188,8 +188,12 @@ function rinrin_preprocess_block(&$variables) {
         
         // If NOT viewing own profile, hide the block completely
         if ($viewed_uid != $current_uid) {
+        // If NOT viewing own profile, hide the block completely
+        if ($viewed_uid != $current_uid) {
           $variables['content'] = [];
           $variables['label'] = '';
+          $variables['attributes']['class'][] = 'hidden';
+          $variables['attributes']['style'] = 'display: none;';
           unset($variables['elements']['#title']);
           unset($variables['elements']['content']);
           $variables['#cache']['contexts'][] = 'user';
