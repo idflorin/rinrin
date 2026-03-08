@@ -79,6 +79,28 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
   text-align: right;
 }
 
+/* related teaser__content Container: Enable Flex and Wrap */
+.node--view-mode-related .teaser__content {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--sp0-75); /* Space between image and body */
+  row-gap: 0;    /* Space between category and content below */
+  align-items: flex-start;
+}
+.node--view-mode-related .teaser__content .field--name-field-category {
+  flex: 0 0 100%;
+  width: 100%;
+}
+.node--view-mode-related .teaser__content .field--type-image, .node--view-mode-related .teaser__content .field--name-body {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+/* Ensure the image scales correctly within its half */
+.node--view-mode-related .teaser__content .field--type-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
 @media (min-width: 31.25rem) {
 
