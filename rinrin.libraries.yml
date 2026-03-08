@@ -19,8 +19,8 @@ global-styling:
       css/layout/social-bar.css: {}
       css/layout/views.css: {}
     theme:
-      css/overrides.css: { weight: 100 }
-      css/custom.css: { weight: 110 }
+      css/overrides.css: { weight: 200 }
+      css/custom.css: { weight: 210 }
     component:
       css/components/block.css: {}
       css/components/breadcrumb.css: {}
