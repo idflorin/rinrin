@@ -136,6 +136,13 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
 .glightbox-clean .gdesc-inner {
 	padding: 1rem;
 }
+.glightbox-clean .gslide-desc {
+  font-size: .86em;
+  margin-bottom: 0;
+  font-family: "metropolis", sans-serif;
+  line-height: 1.4em;
+  font-weight: 600;
+}
 
 @media (min-width: 81.25rem) {
   .sidebar-grid .wide-content {
