@@ -784,9 +784,9 @@ function _rinrin_hex_to_hsl(string $hex_string) {
 function rinrin_block_access(\Drupal\block\Entity\Block $block, $operation, \Drupal\Core\Session\AccountInterface $account) {
   // List of blocks from Article Status view that should only be visible on user's own profile
   $restricted_blocks = [
-    'views_block__article_status_block_1',  // Published Articles by User
-    'views_block__article_status_block_2',  // Draft Articles by User
-    'views_block__article_status_block_3',  // Submitted for Review by User
+    'rinrin_views_block__article_status_block_1',  // Published Articles by User
+    'rinrin_views_block__article_status_block_2',  // Draft Articles by User
+    'rinrin_views_block__article_status_block_3',  // Submitted for Review by User
     'views_block__article_status_block_4',  // Needing Revision by User
   ];
   
