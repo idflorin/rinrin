@@ -787,7 +787,7 @@ function rinrin_block_access(\Drupal\block\Entity\Block $block, $operation, \Dru
     'rinrin_views_block__article_status_block_1',  // Published Articles by User
     'rinrin_views_block__article_status_block_2',  // Draft Articles by User
     'rinrin_views_block__article_status_block_3',  // Submitted for Review by User
-    'views_block__article_status_block_4',  // Needing Revision by User
+    'rinrin_views_block__article_status_block_4',  // Needing Revision by User
   ];
   
   if ($operation == 'view' && in_array($block->id(), $restricted_blocks)) {
