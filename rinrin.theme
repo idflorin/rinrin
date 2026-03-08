@@ -784,18 +784,26 @@ function _rinrin_hex_to_hsl(string $hex_string) {
 function rinrin_block_access(\Drupal\block\Entity\Block $block, $operation, \Drupal\Core\Session\AccountInterface $account) {
   // List of blocks from Article Status view that should only be visible on user's own profile
   $restricted_blocks = [
-    'rinrin_views_block__article_status_block_1',  // Published Articles by User
+    'rinrin_views_block__article_status_block_1',  // Published Articles by User (if you add it later)
     'rinrin_views_block__article_status_block_2',  // Draft Articles by User
     'rinrin_views_block__article_status_block_3',  // Submitted for Review by User
     'rinrin_views_block__article_status_block_4',  // Needing Revision by User
   ];
   
   if ($operation == 'view' && in_array($block->id(), $restricted_blocks)) {
+    // DEBUG: Log what's happening
+    \Drupal::logger('rinrin')->notice('Block access check: @block, Current user: @current, Route user: @route', [
+      '@block' => $block->id(),
+      '@current' => $account->id(),
+      '@route' => \Drupal::routeMatch()->getParameter('user') ? (\Drupal::routeMatch()->getParameter('user') instanceof \Drupal\user\UserInterface ? \Drupal::routeMatch()->getParameter('user')->id() : \Drupal::routeMatch()->getParameter('user')) : 'none',
+    ]);
+    
     // Allow admins and editors to see all blocks on all profiles
     if ($account->hasPermission('administer blocks') || 
         $account->hasPermission('administer nodes') ||
         $account->hasPermission('use editorial transition publish') ||
         $account->hasPermission('use editorial transition review')) {
+      \Drupal::logger('rinrin')->notice('Allowing block @block - user has admin permission', ['@block' => $block->id()]);
       return \Drupal\Core\Access\AccessResult::allowed()->addCacheContexts(['user.permissions']);
     }
     
@@ -807,12 +815,19 @@ function rinrin_block_access(\Drupal\block\Entity\Block $block, $operation, \Dru
       $viewed_uid = is_object($viewed_user) ? $viewed_user->id() : $viewed_user;
       $current_uid = $account->id();
       
+      \Drupal::logger('rinrin')->notice('Comparing UIDs - Viewed: @viewed, Current: @current', [
+        '@viewed' => $viewed_uid,
+        '@current' => $current_uid,
+      ]);
+      
       // Allow if viewing own profile
       if ($viewed_uid == $current_uid) {
+        \Drupal::logger('rinrin')->notice('Allowing block - viewing own profile');
         return \Drupal\Core\Access\AccessResult::allowed()->addCacheContexts(['user', 'url.path']);
       }
       else {
         // Forbid if viewing someone else's profile
+        \Drupal::logger('rinrin')->notice('Forbidding block - viewing someone else profile');
         return \Drupal\Core\Access\AccessResult::forbidden()->addCacheContexts(['user', 'url.path']);
       }
     }
