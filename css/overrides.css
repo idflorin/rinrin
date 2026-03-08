@@ -134,7 +134,7 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
     flex: 1; /* Takes up all remaining space on the right */
     min-width: 0; /* Prevents text from pushing flex container width */
   }
-  .node--view-mode-related{padding-block-end: var(--sp0-25);margin-block-end: var(--sp0-25);}
+  .views-row .node--view-mode-related{padding-block-end: var(--sp0-25);margin-block-end: var(--sp0-25);}
 }
 
 
