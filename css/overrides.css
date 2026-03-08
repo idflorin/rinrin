@@ -268,7 +268,7 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
  * https://www.drupal.org/node/3084859
  * @preserve
  */
-.teaser {
+.main-content .teaser {
   position: relative; /* Anchor after pseudo-element. */
   padding-block-end: var(--sp0-25);
   margin-block-end: var(--sp0-25);
@@ -288,7 +288,7 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
     margin-block-end: var(--sp0-25);
   }
 }
-.teaser__content {
+.main-content .teaser__content {
   display: grid;
   grid-auto-rows: max-content;
   gap: var(--sp0-5);
@@ -301,7 +301,7 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
     gap: var(--sp0-5);
   }
 }
-.teaser__image {
+.main-content .teaser__image {
   flex-shrink: 0;
   margin: 0;
 
@@ -341,7 +341,7 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
 .teaser__meta {
   margin-block-end: var(--sp0-25);
 }
-.teaser__title {
+.main-content .teaser__title {
   margin-block: 0;
   flex-basis: calc(100% - var(--sp4-5));
   color: var(--color-text-neutral-loud);
@@ -354,7 +354,7 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
     line-height: var(--sp3);
   }
 }
-.teaser__top {
+.main-content .teaser__top {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
