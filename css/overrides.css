@@ -295,7 +295,9 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
       height: var(--grid-col-width);
     }
   }
-
+.teaser__image img {
+    border-radius: 7px;
+}
   @media (min-width: 62.5rem) {
     position: absolute;
     inset-block-start: 0;
