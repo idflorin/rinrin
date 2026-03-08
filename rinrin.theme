@@ -782,6 +782,7 @@ function _rinrin_hex_to_hsl(string $hex_string) {
  * Implements hook_block_access().
  */
 function rinrin_block_access(\Drupal\block\Entity\Block $block, $operation, \Drupal\Core\Session\AccountInterface $account) {
+  // Import AccessResult class at the top
   use Drupal\Core\Access\AccessResult;
   
   // List of blocks from Article Status view that should only be visible on user's own profile
