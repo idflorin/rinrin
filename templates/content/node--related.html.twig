@@ -39,11 +39,9 @@
   {% endblock %}
   {% block content %}
     {{ content|without('field_image', 'links') }}
-      <div class="node__meta">
         <span{{ author_attributes }}>
          {{ 'Published'|t }}: {{ date }}
         </span>
-        {{ metadata }}
       </div>
   {% endblock %}
 {% endembed %}
