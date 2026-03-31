@@ -736,19 +736,18 @@ function rinrin_preprocess_breadcrumb(&$variables){
  * Implements hook_preprocess_file_upload_help().
  */
 function rinrin_preprocess_file_upload_help(&$variables) {
-  // Description items in Drupal 11 are usually an array of renderable strings.
   if (!empty($variables['descriptions'])) {
-    foreach ($variables['descriptions'] as &$description) {
-      // Convert to string to check content safely
-      $text = (string) $description;
+    foreach ($variables['descriptions'] as $key => $description) {
+      // Render the element to a string to ensure we can search it
+      $rendered_text = (string) render($description);
 
-      // Match the specific dimension string provided by Core
-      if (str_contains($text, 'Images must be larger than')) {
-        // Strip existing internal <strong> tags to avoid nested <strong><strong>
-        $plain_text = strip_tags($text);
+      if (str_contains($rendered_text, 'Images must be larger than')) {
+        // Use strip_tags to remove the core <strong> around the numbers 
+        // so we can wrap the WHOLE sentence instead.
+        $clean_text = strip_tags($rendered_text);
         
-        // Re-wrap the entire line in strong tags
-        $description = Markup::create('<strong>' . $plain_text . '</strong>');
+        // Update the array item directly
+        $variables['descriptions'][$key] = Markup::create('<strong>' . $clean_text . '</strong>');
       }
     }
   }
