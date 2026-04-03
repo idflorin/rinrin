@@ -102,6 +102,11 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
   display: block;
 }
 
+  .text-content blockquote, .cke_editable blockquote {
+    font-size: 1.5rem;
+    line-height: var(--sp2);
+  }
+  
 @media (min-width: 31.25rem) {
 
 }
