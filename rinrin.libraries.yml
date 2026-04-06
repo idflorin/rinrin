@@ -52,6 +52,7 @@ global-styling:
       css/components/table.css: {}
       css/components/text-content.css: {}
       css/components/wide-content.css: {}
+      css/components/media-library.css: {}
 
   js:
     js/checkbox.js: {}
