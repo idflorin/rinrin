@@ -57,7 +57,7 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
 }
 
 /* Category: Force to its own line (Full Width) */
-.node--view-mode-teaser .teaser__content .field--name-field-category {
+.node--view-mode-teaser .teaser__content .field--name-field-category, .node--view-mode-teaser .teaser__content .field--name-field-brand{
   flex: 0 0 100%;
   width: 100%;
 }
