@@ -45,6 +45,10 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
     font-weight: 700;
 }
 
+.breadcrumb__link{color: var(--color-text-primary-medium);}
+.node__title a {color: var(--color-text-primary-medium);}
+.node__title a:hover, .node__title a:focus {color: var(--color--primary-50);}
+.node__content .text-content a:not(.button) {color: var(--color-text-primary-medium);}				  
 
 
 /* teaser__content Container: Enable Flex and Wrap */
@@ -57,7 +61,7 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
 }
 
 /* Category: Force to its own line (Full Width) */
-.node--view-mode-teaser .teaser__content .field--name-field-category, .node--view-mode-teaser .teaser__content .field--name-field-brand{
+.node--view-mode-teaser .teaser__content .field--name-field-category {
   flex: 0 0 100%;
   width: 100%;
 }
@@ -77,6 +81,7 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
 .node__meta {
   justify-content: flex-end;
   text-align: right;
+  margin-block-end: var(--sp0-5);				 
 }
 
 /* related teaser__content Container: Enable Flex and Wrap */
@@ -116,7 +121,7 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
     width: calc(10 * var(--grid-col-width) + 11 * var(--grid-gap));
   }
   .node__content {
-      padding-block-end: var(--sp1-5);
+      padding-block-end: var(--sp0-5);
   }
   /* Image Gallery: "Almost a half" aligned left */
   .node--view-mode-teaser .teaser__content .field--type-image {
@@ -161,26 +166,6 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
 
 .form-item__description {
  font-size: var(--font-size-m);
-}
-
-.button--primary:disabled, .button--primary.is-disabled {
-  color: var(--color--white);
-  background-color: var(--color--primary-30);
-}
-
-/* glightbox */ 
-.glightbox-clean .gslide-description {
-  border-radius: 7px;
-}
-.glightbox-clean .gdesc-inner {
-	padding: 1rem;
-}
-.glightbox-clean .gslide-desc {
-  font-size: .86em;
-  margin-bottom: 0;
-  font-family: "metropolis", sans-serif;
-  line-height: 1.4em;
-  font-weight: 600;
 }
 
 .view-more-by-this-author h3 {
