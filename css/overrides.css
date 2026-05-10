@@ -196,12 +196,13 @@ img, .feed-icon__icon, .pager__item--active, .pager__link:hover, .pager__link:fo
     font-size: var(--sp2);
     line-height: var(--sp3);
   }
+  .wide-content {margin-block: var(--sp0-25) var(--sp1);}
 }
 
 @media (min-width: 62.5rem) {
 
   .sidebar-grid > .site-main {
-    grid-column: 2 / 12;
+    grid-column: 2 / 11;
     grid-template-columns: repeat(10, minmax(0, 1fr));
   }
 
