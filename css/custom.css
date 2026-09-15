@@ -9,3 +9,9 @@
 /* =====================================================
    Add your custom styles below
    ===================================================== */
+
+/* simple lightbox  */
+.sl-wrapper .sl-image {border-radius: 7px;}
+.sl-wrapper .sl-image .sl-caption{border-radius: 0 0 7px 7px;background: rgba(0, 0, 0, .5);}
+/* plyr video player  */
+.plyr{border-radius: 7px;}
