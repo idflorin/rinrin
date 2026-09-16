@@ -16,7 +16,7 @@
 
 <a href="{{ url }}"{{ attributes.addClass('feed-icon') }}>
   <span class="feed-icon__label">
-    {{ title }}
+    {{ title|raw }}
   </span>
   <span class="feed-icon__icon" aria-hidden="true">
     {% include "@rinrin/../images/rss.svg" %}
